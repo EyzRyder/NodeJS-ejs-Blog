@@ -7,7 +7,11 @@ module.exports = {
     "./views/partials/**/*.{html,js,ejs}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        body: ['Noto Serif', serif]
+      }
+    },
   },
   plugins: [],
 }

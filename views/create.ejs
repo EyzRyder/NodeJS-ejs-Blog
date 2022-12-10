@@ -3,22 +3,22 @@
 
 <%- include('./partials/head.ejs') %>
 
-<body>
+<body class="m-5 py-0 px-5 font-body max-h-screen max-w-screen">
 
 <%- include('./partials/nav.ejs') %>
 
-    <div>
-        <form>
-            <label for="text">Blog title</label>
-            <input type="text" id="title" required/>
+    <div class="ml-5 flex justify-center">
+        <form class="max-w-md m-0">
+            <label class="block mt-3" for="text">Blog title</label>
+            <input class="block w-full my-2 mx-0 p-2" type="text" id="title" required/>
 
-            <label for="snippet">Blog Snippet</label>
-            <input type="text" id="snippet" required />
+            <label class="block mt-3" for="snippet">Blog Snippet</label>
+            <input class="block w-full my-2 mx-0 p-2" type="text" id="snippet" required />
 
-            <label for="text">Blog body</label>
-            <textarea id="body" required ></textarea>
+            <label class="block mt-3" for="text">Blog body</label>
+            <textarea class="block w-full my-2 mx-0 p-2 h-28" id="body" required ></textarea>
 
-            <button>Submit</button>
+            <button class="mt-5 bg-[crimson] text-white p-2 bottom-0 text-sm cursor-pointer">Submit</button>
         </form>
     </div>
     <%- include('./partials/footer.ejs') %>
