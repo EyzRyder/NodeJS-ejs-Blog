@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Noto Serif', serif]
+        body: ['Noto Serif']
       }
     },
   },

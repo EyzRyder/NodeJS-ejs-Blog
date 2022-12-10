@@ -1,7 +1,7 @@
 const express = require('express');
 //express app
 const app = express();
-const port = 5000
+const port = 3000
 // register view engine
 
 // Static Files
@@ -16,7 +16,15 @@ app.set('view engine', 'ejs');
 
 
 // listen for requests
-app.listen(3000);
+app.listen(port);
+
+app.use((req, res,next) => {
+    console.log('new request made');
+    console.log('host: ' + req.hostname);
+    console.log('path: ' + req.path);
+    console.log('method: ' + req.method);
+    next();
+});
 
 app.get('/', function (req, res) {
     // res.send('<p>Home Page</p>');
