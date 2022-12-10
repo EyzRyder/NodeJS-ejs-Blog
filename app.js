@@ -26,6 +26,12 @@ app.use((req, res,next) => {
     next();
 });
 
+app.use((req, res, next) => {
+    console.log('in the next medd');
+    next();
+});
+
+
 app.get('/', function (req, res) {
     // res.send('<p>Home Page</p>');
 
