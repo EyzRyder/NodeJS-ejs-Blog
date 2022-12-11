@@ -1,12 +1,19 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 
 //express app
 const app = express();
 const port = 3000;
 
 // connect to mogoDB
-const dbURI = 'mongodb + srv://EyzRyder:fzo2URQ537@nodetus.8adorfl.mongodb.net/?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://EyzRyder:fzo2URQ537@nodetus.8adorfl.mongodb.net/note-tuts?retryWrites=true&w=majority';
+mongoose.set("strictQuery", true);
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
+    .then((result) => {
+        app.listen(port);
+        console.log("connect to db"); })
+    .catch((err) => console.log(err));
 // register view engine
 
 // Static Files
@@ -18,7 +25,6 @@ app.set('view engine', 'ejs');
 
 
 // listen for requests
-app.listen(port);
 
 //middleware 
 app.use('/public', express.static(__dirname + '/public'))
