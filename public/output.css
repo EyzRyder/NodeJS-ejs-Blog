@@ -598,6 +598,9 @@ video {
   font-size: 3rem;
   line-height: 1;
 }
+    .font-bold{
+  font-weight: 700;
+}
     .font-light{
   font-weight: 300;
 }
@@ -632,7 +635,7 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-    .generalText{
+    h1, h2, h3,h4, p, a, ul{
   margin: 0px;
   padding: 0px;
   --tw-text-opacity: 1;

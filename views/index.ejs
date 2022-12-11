@@ -8,16 +8,16 @@
 <%- include('./partials/nav.ejs') %>
 
     <div class="ml-5">
-        <h2 class="generalText mb-10">All Blogs</h2>
+        <h2 class="font-bold mb-10">All Blogs</h2>
         <% if(blogs.length> 0){%>
 
             <% blogs.forEach(blog=>{%>
-                <h3 class="generalText capitalize mb-2"><%= blog.title %></h3>
-                <p class="generalText"><%= blog.snippet%></p>
+                <h3 class=" capitalize mb-2"><%= blog.title %></h3>
+                <p class=""><%= blog.snippet%></p>
                 <%})%>
 
         <% } else { %>
-            <p class="generalText">there are no blog to display...</p>
+            <p class="">there are no blog to display...</p>
         <%}%>
 
     </div>
