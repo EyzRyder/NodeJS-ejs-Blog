@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "build-css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "buildCss": "npx postcss ./src/input.css -o ./dist/output.css"
+    "build-css": "npx tailwindcss -i ./src/input.css -o ./public/output.css --watch",
+    "buildCss": "npx postcss ./src/input.css -o ./public/output.css"
   },
   "keywords": [],
   "author": "Gabriel Bessi",

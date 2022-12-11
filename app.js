@@ -1,4 +1,5 @@
 const express = require('express');
+const morgan = require('morgan');
 //express app
 const app = express();
 const port = 3000
@@ -7,7 +8,6 @@ const port = 3000
 // Static Files
 // app.use(express.static('public'));
 // Specific folder example
-app.use('/dist', express.static(__dirname + '/dist'))
 // app.use('/js', express.static(__dirname + 'public/js'))
 // app.use('/img', express.static(__dirname + 'public/images'))
 
@@ -18,19 +18,9 @@ app.set('view engine', 'ejs');
 // listen for requests
 app.listen(port);
 
-app.use((req, res,next) => {
-    console.log('new request made');
-    console.log('host: ' + req.hostname);
-    console.log('path: ' + req.path);
-    console.log('method: ' + req.method);
-    next();
-});
-
-app.use((req, res, next) => {
-    console.log('in the next medd');
-    next();
-});
-
+//middleware 
+app.use('/public', express.static(__dirname + '/public'))
+app.use(morgan('dev'));
 
 app.get('/', function (req, res) {
     // res.send('<p>Home Page</p>');
