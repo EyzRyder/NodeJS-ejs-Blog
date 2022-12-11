@@ -30,6 +30,10 @@ app.set('view engine', 'ejs');
 app.use('/public', express.static(__dirname + '/public'))
 app.use(morgan('dev'));
 
+app.get('/add-blog', (req, res) => {
+    //
+});
+
 app.get('/', function (req, res) {
     // res.send('<p>Home Page</p>');
 
