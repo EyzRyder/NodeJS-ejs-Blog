@@ -8,15 +8,15 @@
 <%- include('./partials/nav.ejs') %>
 
     <div class="ml-5 flex justify-center">
-        <form class="w-full max-w-md m-0">
+        <form class="w-full max-w-md m-0" action="/blogs" method="POST">
             <label class="block mt-3" for="text">Blog title</label>
-            <input class="block w-full my-2 mx-0 p-2 border" type="text" id="title" required/>
+            <input class="block w-full my-2 mx-0 p-2 border" type="text" id="title" name="title" required/>
 
             <label class="block mt-3" for="snippet">Blog Snippet</label>
-            <input class="block w-full my-2 mx-0 p-2 border" type="text" id="snippet" required />
+            <input class="block w-full my-2 mx-0 p-2 border" type="text" id="snippet" name="snippet" required />
 
             <label class="block mt-3" for="text">Blog body</label>
-            <textarea class="block w-full my-2 mx-0 p-2 h-28 border" id="body" required ></textarea>
+            <textarea class="block w-full my-2 mx-0 p-2 h-28 border" id="body" name="body" required ></textarea>
 
             <button class="mt-5 bg-[crimson] text-white p-2 bottom-0 text-sm cursor-pointer">Submit</button>
         </form>

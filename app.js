@@ -10,10 +10,11 @@ const port = 3000;
 // connect to mogoDB
 const dbURI = 'mongodb+srv://EyzRyder:fzo2URQ537@nodetus.8adorfl.mongodb.net/node-tuts?retryWrites=true&w=majority';
 mongoose.set("strictQuery", true);
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
         app.listen(port);
-        console.log("connect to db"); })
+        console.log("connect to db");
+    })
     .catch((err) => console.log(err));
 // register view engine
 
@@ -21,14 +22,16 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
 // app.use(express.static('public'));
 // Specific folder examp
 
-app.set('view engine', 'ejs'); 
+app.set('view engine', 'ejs');
 //  app.set('views', 'name of the folder');
 
 
 // listen for requests
 
 //middleware 
-app.use('/public', express.static(__dirname + '/public'))
+app.use(express.static('public'));
+app.use('/public', express.static(__dirname + '/public'));  //to be especifica
+app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 
@@ -84,19 +87,52 @@ app.get('/about', function (req, res) {
 //  blog routes
 
 app.get('/blogs', (req, res) => {
-
-
-        Blog.find().sort({ createdAt: -1})
+    Blog.find()
+        .sort({ createdAt: -1 })
         .then((result) => {
-            res.render('index', { title: 'All Blogs', blogs:result });
+            res.render('index', { title: 'All Blogs', blogs: result });
         })
         .catch((err) => {
             console.log(err)
         });
 });
 
+app.post('/blogs', (req, res) => {
+    console.log(req.body);
+    const blog = new Blog(req.body);
+    blog.save()
+        .then((result) => {
+            res.redirect('/blogs');
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
+
+app.get('/blogs/:id', (req, res) => {
+    const id = req.params.id;
+    Blog.findById(id)
+        .then((result) => {
+            res.render('details', {blog: result, title: 'Blog Details'});
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
+
+app.delete('/blogs/:id', (req, res) => { 
+    const id = req.params.id;
+    Blog.findByIdAndDelete(id)
+        .then((result) => {
+            res.json({ redirect: '/blogs'});
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
+
 app.get('/blogs/create', (req, res) => {
-    res.render('create',{ title: 'Create a New Blog' })
+    res.render('create', { title: 'Create a New Blog' })
 });
 
 // 4040 page

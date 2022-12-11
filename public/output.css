@@ -474,8 +474,20 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+    .absolute{
+  position: absolute;
+}
+    .relative{
+  position: relative;
+}
     .bottom-0{
   bottom: 0px;
+}
+    .top-0{
+  top: 0px;
+}
+    .right-0{
+  right: 0px;
 }
     .m-5{
   margin: 1.25rem;
@@ -498,6 +510,10 @@ video {
     .mx-5{
   margin-left: 1.25rem;
   margin-right: 1.25rem;
+}
+    .my-10{
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
     .mb-10{
   margin-bottom: 2.5rem;
@@ -550,11 +566,26 @@ video {
     .justify-between{
   justify-content: space-between;
 }
+    .rounded-\[\]{
+  border-radius: ;
+}
+    .rounded-\[50\%\]{
+  border-radius: 50%;
+}
+    .rounded-\[100\%\]{
+  border-radius: 100%;
+}
     .border{
   border-width: 1px;
 }
+    .border-\[6px\]{
+  border-width: 6px;
+}
     .border-b{
   border-bottom-width: 1px;
+}
+    .border-l-\[6px\]{
+  border-left-width: 6px;
 }
     .border-solid{
   border-style: solid;
@@ -562,6 +593,16 @@ video {
     .border-\[\#ddd\]{
   --tw-border-opacity: 1;
   border-color: rgb(221 221 221 / var(--tw-border-opacity));
+}
+    .border-\[\]{
+  border-color: ;
+}
+    .border-\[crimson\]{
+  --tw-border-opacity: 1;
+  border-color: rgb(220 20 60 / var(--tw-border-opacity));
+}
+    .border-l-\[\]{
+  border-left-color: ;
 }
     .bg-\[crimson\]{
   --tw-bg-opacity: 1;
@@ -583,6 +624,9 @@ video {
 }
     .pr-5{
   padding-right: 1.25rem;
+}
+    .pl-8{
+  padding-left: 2rem;
 }
     .text-center{
   text-align: center;
@@ -618,6 +662,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(119 119 119 / var(--tw-text-opacity));
 }
+    .text-\[crimson\]{
+  --tw-text-opacity: 1;
+  color: rgb(220 20 60 / var(--tw-text-opacity));
+}
 
     :root {
         --primary: #cc1e1e;
@@ -641,4 +689,98 @@ video {
   --tw-text-opacity: 1;
   color: rgb(34 34 34 / var(--tw-text-opacity));
   text-decoration-line: none;
+}
+
+    .hover\:cursor-pointer:hover{
+  cursor: pointer;
+}
+
+    .hover\:bg-\[\]:hover{
+  background-color: ;
+}
+
+    .hover\:bg-\[crimson\]:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 20 60 / var(--tw-bg-opacity));
+}
+
+    .hover\:text-\[cr\]:hover{
+  color: cr;
+}
+
+    .hover\:text-\[crimso\]:hover{
+  color: crimso;
+}
+
+    .hover\:text-\[crimson\]:hover{
+  --tw-text-opacity: 1;
+  color: rgb(220 20 60 / var(--tw-text-opacity));
+}
+
+    .hover\:text-\[\#000000\]:hover{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+    .hover\:text-\[\#ffffff\]:hover{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+    .hover\:text-white:hover{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+    .hover\:shadow:hover{
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+    .hover\:shadow-sm:hover{
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+    .hover\:shadow-md:hover{
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+    .hover\:shadow-\[\]:hover{
+  --tw-shadow-color: ;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+    .hover\:shadow-\[rgb\]:hover{
+  --tw-shadow-color: rgb;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+    .hover\:shadow-\[rgba\(\)\]:hover{
+  --tw-shadow-color: rgba();
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+    .hover\:shadow-\[rgba\(0\2c 0\2c 0\)\]:hover{
+  --tw-shadow-color: rgba(0,0,0);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+    .hover\:shadow-\[rgba\(0\2c 0\2c 0\.2\)\]:hover{
+  --tw-shadow-color: rgba(0,0,0.2);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+    .hover\:shadow-\[rgba\(0\2c 0\2c \2c 00\.2\)\]:hover{
+  --tw-shadow-color: rgba(0,0,,00.2);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+    .hover\:shadow-\[rgba\(0\2c 0\2c 0\2c 0\.2\)\]:hover{
+  --tw-shadow-color: rgba(0,0,0,0.2);
+  --tw-shadow: var(--tw-shadow-colored);
 }

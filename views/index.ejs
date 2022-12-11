@@ -12,8 +12,10 @@
         <% if(blogs.length> 0){%>
 
             <% blogs.forEach(blog=>{%>
-                <h3 class=" capitalize mb-2"><%= blog.title %></h3>
+                <a class="block my-10 mx-0 pl-8 border-l-[6px] border-solid border-[crimson]" href="/blogs/<%= blog._id %>" >
+                <h3 class=" hover:text-[crimson] font-bold capitalize mb-2"><%= blog.title %></h3>
                 <p class=""><%= blog.snippet%></p>
+                </a>
                 <%})%>
 
         <% } else { %>
