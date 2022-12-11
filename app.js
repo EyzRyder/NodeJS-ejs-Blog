@@ -1,15 +1,17 @@
 const express = require('express');
 const morgan = require('morgan');
+
 //express app
 const app = express();
-const port = 3000
+const port = 3000;
+
+// connect to mogoDB
+const dbURI = 'mongodb + srv://EyzRyder:fzo2URQ537@nodetus.8adorfl.mongodb.net/?retryWrites=true&w=majority';
 // register view engine
 
 // Static Files
 // app.use(express.static('public'));
-// Specific folder example
-// app.use('/js', express.static(__dirname + 'public/js'))
-// app.use('/img', express.static(__dirname + 'public/images'))
+// Specific folder examp
 
 app.set('view engine', 'ejs'); 
 //  app.set('views', 'name of the folder');
