@@ -25,7 +25,6 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 app.set('view engine', 'ejs');
 //  app.set('views', 'name of the folder');
 
-
 // listen for requests
 
 //middleware 
@@ -85,7 +84,7 @@ app.get('/about', function (req, res) {
 });
 
 // blog routes
-app.use('/blogs',blogRoutes);
+app.use('/blogs', blogRoutes);
 
 // 4040 page
 app.use((req, res) => {
