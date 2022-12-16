@@ -5,14 +5,14 @@ const blogRoutes = require('./routes/blogRoutes');
 
 //express app
 const app = express();
-const port = 3000;
+const port = process.env.PORT||300;
 
 // connect to mogoDB
 const dbURI = 'mongodb+srv://EyzRyder:fzo2URQ537@nodetus.8adorfl.mongodb.net/node-tuts?retryWrites=true&w=majority';
 mongoose.set("strictQuery", true);
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
-        app.listen(port);
+        app.listen(port,()=>console.log(`Server is listening on ${port}`));
         console.log("connect to db");
     })
     .catch((err) => console.log(err));
