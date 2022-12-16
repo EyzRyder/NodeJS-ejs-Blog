@@ -9,8 +9,22 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/",
-            "views": "/(.*)"
+            "dest": "/"
+        }
+    ], 
+    "public": true,
+    "redirects": [
+        {
+            "source": "/",
+            "destination": "/view/index.ejs"
+        },
+        {
+            "source": "/blogs",
+            "destination": "/view/index.ejs"
+        },
+        {
+            "source": "/about",
+            "destination": "/view/about.ejs"
         }
     ]
 }
