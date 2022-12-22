@@ -9,6 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
+    "dev": "nodemon app.js",
+
     "buildCss": "npx postcss ./src/input.css -o ./public/output.css --watch"
   },
   "keywords": [],
