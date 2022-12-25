@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
@@ -6,10 +7,10 @@ const blogRoutes = require('./routes/blogRoutes');
 
 //express app
 const app = express();
-const port = process.env.PORT||3000;
+const port = process.env.PORT;
 
 // connect to mogoDB
-const dbURI = 'mongodb+srv://EyzRyder:fzo2URQ537@nodetus.8adorfl.mongodb.net/node-tuts?retryWrites=true&w=majority';
+const dbURI = process.env.dbURI;
 mongoose.set("strictQuery", true);
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
