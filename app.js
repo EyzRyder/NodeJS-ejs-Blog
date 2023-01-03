@@ -14,7 +14,7 @@ const dbURI = process.env.dbURI;
 mongoose.set("strictQuery", true);
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
-        app.listen(port,()=>console.log(`Server is listening on ${port}`));
+        app.listen(port, () => console.log(`Server is listening on (http://localhost:${port})`));
         console.log("connect to db");
     })
     .catch((err) => console.log(err));
