@@ -7,14 +7,14 @@ const blogRoutes = require('./routes/blogRoutes');
 
 //express app
 const app = express();
-const port = process.env.PORT;
+const PORT = (process.env.PORT || 3000);
 
 // connect to mogoDB
 const dbURI = process.env.dbURI;
 mongoose.set("strictQuery", true);
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
-        app.listen(port, () => console.log(`Server is listening on (http://localhost:${port})`));
+        app.listen(PORT, () => console.log(`Server is listening on (http://localhost:${PORT})`));
         console.log("connect to db");
     })
     .catch((err) => console.log(err));
